@@ -350,3 +350,4 @@ export function ScheduleReportModal({ open, onOpenChange }: ScheduleReportModalP
         </Dialog>
     );
 }
+
