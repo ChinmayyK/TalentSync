@@ -18,3 +18,4 @@ import { ResumeParserService } from '../candidates/services/resume-parser.servic
   exports: [ResumeInboxService, ImapService],
 })
 export class ResumeInboxModule {}
+
