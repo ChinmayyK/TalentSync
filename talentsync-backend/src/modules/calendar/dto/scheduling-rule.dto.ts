@@ -66,3 +66,4 @@ export class UpdateSchedulingRuleDto {
   @IsBoolean()
   isDefault?: boolean;
 }
+
