@@ -113,3 +113,4 @@ export default function (data) {
 export function teardown(data) {
     console.log('Load test completed');
 }
+
