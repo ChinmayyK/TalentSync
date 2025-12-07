@@ -129,3 +129,4 @@ services:
 | AWS production | ALB + ACM certificates |
 
 **Application code should NOT handle TLS**—listen on HTTP, let the proxy terminate HTTPS.
+
