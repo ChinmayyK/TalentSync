@@ -158,3 +158,4 @@ export enum SyncEntityType {
   INTERVIEW = 'INTERVIEW',
   JOB = 'JOB',
 }
+
