@@ -8,3 +8,4 @@ import { PrismaService } from '../../../../common/prisma.service';
     exports: [HubspotService]
 })
 export class HubspotModule { }
+
