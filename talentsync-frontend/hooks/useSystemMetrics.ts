@@ -68,4 +68,3 @@ export function useTenantUsageMetrics() {
         staleTime: 120000,
     });
 }
-
