@@ -65,3 +65,4 @@ export interface HiringStageResponse {
   createdAt: Date;
   updatedAt: Date;
 }
+
