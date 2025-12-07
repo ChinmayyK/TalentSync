@@ -23,3 +23,4 @@ export class EmailQueue {
     return this.queue;
   }
 }
+
