@@ -234,3 +234,4 @@ export class TimelineService {
     return plainText.substring(0, maxLength) + '...';
   }
 }
+
