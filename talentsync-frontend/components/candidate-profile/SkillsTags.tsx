@@ -130,3 +130,4 @@ export function SkillsTags({ tags, userRole, isLoading, onAddTag, onRemoveTag }:
     </div>
   );
 }
+
