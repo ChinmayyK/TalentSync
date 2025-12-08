@@ -48,3 +48,4 @@ export function filterByTenant<T extends { tenantId?: string }>(
 ): T[] {
     return data.filter(item => item.tenantId === tenantId);
 }
+
