@@ -286,3 +286,4 @@ export function IntegrationDetailPanel({ integration, isOpen, onClose, onUpdate,
     </Sheet>
   );
 }
+
