@@ -16,3 +16,4 @@ export class GenerateUploadUrlDto {
   @IsString()
   linkedId?: string;
 }
+
