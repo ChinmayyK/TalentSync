@@ -149,3 +149,4 @@ export function ReportsFunnel({ stages, isLoading, onStageClick }: ReportsFunnel
     </div>
   );
 }
+
