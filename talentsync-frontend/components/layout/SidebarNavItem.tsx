@@ -137,4 +137,3 @@ export function SidebarNavItem({ item, collapsed, isActive }: SidebarNavItemProp
         </div>
     );
 }
-
