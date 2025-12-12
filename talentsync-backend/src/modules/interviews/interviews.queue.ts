@@ -14,3 +14,4 @@ export class InterviewsQueue {
     return this.queue;
   }
 }
+
