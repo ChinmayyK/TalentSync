@@ -12,3 +12,4 @@ export class CreateTenantProvisionDto {
   @IsString()
   initialAdminEmail?: string; // email to create as tenant admin
 }
+
