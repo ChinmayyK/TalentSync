@@ -214,3 +214,4 @@ export function InterviewInfoCard({ interview, userRole, onEdit }: InterviewInfo
     </div>
   );
 }
+
