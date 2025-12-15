@@ -143,3 +143,4 @@ export class AdminConsoleController {
     return this.svc.getSystemHealth();
   }
 }
+
