@@ -148,3 +148,4 @@ export function InterviewHistory({ interviews, isLoading, error }: InterviewHist
     </div>
   );
 }
+
