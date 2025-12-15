@@ -114,4 +114,3 @@ export const cursorSizeValues: Record<CursorSettings['size'], number> = {
     large: 32,
     xlarge: 48,
 };
-
