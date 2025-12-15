@@ -4,3 +4,4 @@ export abstract class IntegrationBaseService {
     abstract syncLeads(tenantId: string): Promise<any>;
     abstract syncContacts(tenantId: string): Promise<any>;
 }
+
