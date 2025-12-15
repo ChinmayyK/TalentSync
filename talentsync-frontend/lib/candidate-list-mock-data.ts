@@ -104,3 +104,4 @@ export const mockCandidateList: CandidateListItem[] = [
     tenantId: 'tenant_123',
   },
 ];
+
