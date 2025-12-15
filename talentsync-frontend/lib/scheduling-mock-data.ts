@@ -41,3 +41,4 @@ export const durationOptions = [
   { value: 90, label: '1.5 hours' },
   { value: 120, label: '2 hours' },
 ];
+
