@@ -475,3 +475,4 @@ export function JobForm({ job, onSubmit, isSubmitting }: JobFormProps) {
         </form>
     );
 }
+
