@@ -48,3 +48,4 @@ export function SearchHighlight({
 }
 
 export default SearchHighlight;
+
