@@ -78,3 +78,4 @@ export class MockSAMLProvider {
     return mockUrl.toString();
   }
 }
+
