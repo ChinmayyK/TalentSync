@@ -182,3 +182,4 @@ Duration: ${data.state?.testRunDuration || 'N/A'}
 `;
     return output;
 }
+
