@@ -33,4 +33,3 @@ export class HealthCheckProcessor extends WorkerHost {
     }
   }
 }
-
