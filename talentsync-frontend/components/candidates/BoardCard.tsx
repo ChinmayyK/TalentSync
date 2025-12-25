@@ -116,3 +116,4 @@ export function BoardCard({ candidate, onClick }: BoardCardProps) {
         </div>
     );
 }
+
