@@ -20,3 +20,4 @@ export class CalendarSyncProcessor extends WorkerHost {
     // Would call IntegrationsService to push event to Google/Outlook
   }
 }
+
