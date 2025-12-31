@@ -9,3 +9,4 @@ import { PrismaService } from '../../common/prisma.service';
   exports: [AdminConsoleService],
 })
 export class AdminConsoleModule {}
+
