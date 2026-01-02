@@ -332,3 +332,4 @@ export default function MissedApprovalsPage() {
         </div>
     );
 }
+
