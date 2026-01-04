@@ -317,3 +317,4 @@ function generateMarkdownReport(report: PerformanceReport): string {
 }
 
 generateReport();
+
