@@ -185,3 +185,4 @@ export function SendMessageModal({ open, onOpenChange, defaultRecipient }: SendM
         </Dialog>
     );
 }
+
