@@ -17,3 +17,4 @@ export function loadSQL(filename: string): string {
     throw new Error(`Could not load SQL file: ${filename} at path ${p}`);
   }
 }
+
