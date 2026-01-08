@@ -152,3 +152,4 @@ export function RecoveryCodesModal({ open, onClose }: RecoveryCodesModalProps) {
         </Dialog>
     );
 }
+
