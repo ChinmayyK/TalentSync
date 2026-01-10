@@ -73,3 +73,4 @@ export const COMMON_SHORTCUTS = {
 } as const;
 
 export default useKeyboardShortcuts;
+
