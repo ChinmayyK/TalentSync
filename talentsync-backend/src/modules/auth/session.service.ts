@@ -224,3 +224,4 @@ export class SessionService {
     return 'Unknown Device';
   }
 }
+
