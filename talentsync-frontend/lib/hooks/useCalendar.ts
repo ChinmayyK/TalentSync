@@ -362,3 +362,4 @@ export async function initiateMicrosoftConnect(redirectUri: string): Promise<str
     const result = await getMicrosoftAuthUrl(redirectUri);
     return result.authUrl;
 }
+
