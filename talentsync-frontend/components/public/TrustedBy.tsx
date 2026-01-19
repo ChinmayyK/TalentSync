@@ -53,4 +53,3 @@ export function TrustedBy() {
         </section>
     );
 }
-
