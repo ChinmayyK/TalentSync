@@ -3,3 +3,4 @@ export class TenantProvisionStatusDto {
     status: 'pending' | 'in_progress' | 'completed' | 'failed';
     message?: string;
 }
+
