@@ -101,3 +101,4 @@ export class AppModule {
     consumer.apply(TenantMiddleware).forRoutes('*');
   }
 }
+
