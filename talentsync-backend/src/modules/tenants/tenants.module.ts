@@ -16,3 +16,4 @@ import { BullModule } from '@nestjs/bullmq';
   exports: [TenantsService],
 })
 export class TenantsModule {}
+
