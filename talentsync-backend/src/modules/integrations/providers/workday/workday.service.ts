@@ -37,3 +37,4 @@ export class WorkdayService implements IntegrationConnector {
         return { received: true };
     }
 }
+
