@@ -309,3 +309,4 @@ export function TwoFactorSetupModal({ open, onClose }: TwoFactorSetupProps) {
         </Dialog>
     );
 }
+
