@@ -144,3 +144,4 @@ export const vendorNavItems: NavGroup = {
     { title: 'Submitted Candidates', path: '/portal/vendor/candidates', icon: 'Users' },
   ]
 };
+
