@@ -228,3 +228,4 @@ export function ViewSelector({ currentView, onViewChange, collapsed = false }: V
         </div>
     );
 }
+
