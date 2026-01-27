@@ -121,3 +121,4 @@ export function TwoFactorDisableModal({ open, onClose }: TwoFactorDisableModalPr
         </Dialog>
     );
 }
+
