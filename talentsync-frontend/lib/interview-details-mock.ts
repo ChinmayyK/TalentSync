@@ -155,4 +155,3 @@ export const mockNotes: InterviewNote[] = [
 ];
 
 export const currentUserRole: UserRole = 'recruiter'; // Change to test different RBAC states
-
