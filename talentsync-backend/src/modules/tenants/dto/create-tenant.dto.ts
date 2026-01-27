@@ -12,3 +12,4 @@ export class CreateTenantDto {
   @IsObject()
   settings?: any;
 }
+
