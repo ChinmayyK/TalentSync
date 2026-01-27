@@ -189,3 +189,4 @@ export async function deleteScheduledReport(id: string): Promise<void> {
 export async function toggleScheduledReport(id: string): Promise<ScheduledReport> {
     return client.post<ScheduledReport>(`/reports/schedules/${id}/toggle`);
 }
+
