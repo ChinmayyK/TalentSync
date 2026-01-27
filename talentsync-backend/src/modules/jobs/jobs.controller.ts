@@ -95,3 +95,4 @@ export class JobsController {
     return this.jobsService.delete(req.tenantId, id);
   }
 }
+
