@@ -133,3 +133,4 @@ export class GetSyncLogsQueryDto {
     @IsString()
     entityType?: string;
 }
+
