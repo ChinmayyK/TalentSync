@@ -568,3 +568,4 @@ kubectl exec -it <pod-name> -n talentsync -- sh
 ---
 
 *Operations Manual maintained by TalentSync DevOps Team*
+
