@@ -76,3 +76,4 @@ export function PlatformMetricsCards({ data, isLoading }: PlatformMetricsCardsPr
         </div>
     );
 }
+
