@@ -93,3 +93,4 @@ export const mockStageCounts: StageCount[] = [
   { stage: 'interview-2', label: 'Interview 2', count: 1, pending: 0, completed: 1 },
   { stage: 'offer', label: 'Offer', count: 1, pending: 0, completed: 1 },
 ];
+
