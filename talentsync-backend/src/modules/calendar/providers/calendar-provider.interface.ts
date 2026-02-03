@@ -51,3 +51,4 @@ export interface CalendarProvider {
    */
   isTokenExpired?(accountId: string): Promise<boolean>;
 }
+
