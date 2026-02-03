@@ -185,3 +185,4 @@ export async function bulkReject(dto: BulkApproveRejectDto): Promise<{ count: nu
 export async function approveAllPendingAndMissed(remarks?: string): Promise<{ count: number; message: string }> {
     return client.post<{ count: number; message: string }>('/ops/approvals/bulk/approve-all', { remarks });
 }
+
