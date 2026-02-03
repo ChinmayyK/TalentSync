@@ -118,3 +118,4 @@ export class HiringStagesController {
     return this.stagesService.delete(req.user.tenantId, req.user.userId, id);
   }
 }
+
