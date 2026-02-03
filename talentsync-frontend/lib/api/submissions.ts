@@ -36,4 +36,3 @@ export async function runManualSubmission(dto: TriggerManualSubmissionDto = {}):
 export async function getSubmissionRunHistory(limit = 20): Promise<SubmissionRun[]> {
     return client.get<SubmissionRun[]>('/ops/submissions/history', { params: { limit } });
 }
-
