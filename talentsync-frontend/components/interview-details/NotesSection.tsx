@@ -139,3 +139,4 @@ export function NotesSection({ notes, userRole, isLoading, error, onAddNote }: N
     </div>
   );
 }
+
