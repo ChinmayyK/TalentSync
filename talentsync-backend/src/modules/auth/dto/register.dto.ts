@@ -26,3 +26,4 @@ export class RegisterDto {
   @IsString()
   tenantId?: string;
 }
+
