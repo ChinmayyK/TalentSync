@@ -273,4 +273,3 @@ export class CommunicationController {
     return this.channelService.delete(req.user.tenantId, channel);
   }
 }
-
