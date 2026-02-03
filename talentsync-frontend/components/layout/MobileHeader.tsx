@@ -225,3 +225,4 @@ export function MobileHeader({
         </header>
     );
 }
+
