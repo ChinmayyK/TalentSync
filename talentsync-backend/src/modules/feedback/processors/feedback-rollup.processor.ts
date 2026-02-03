@@ -51,4 +51,3 @@ export const startFeedbackRollupProcessor = (prisma: PrismaService) => {
 
   return worker;
 };
-
