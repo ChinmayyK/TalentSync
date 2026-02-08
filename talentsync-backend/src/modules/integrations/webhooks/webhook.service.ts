@@ -12,3 +12,4 @@ export class WebhookService {
     return this.integrationsService.handleWebhook(provider, payload);
   }
 }
+
