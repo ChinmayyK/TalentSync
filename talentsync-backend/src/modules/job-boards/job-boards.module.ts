@@ -22,3 +22,4 @@ import { PrismaService } from '../../common/prisma.service';
   exports: [JobBoardsService],
 })
 export class JobBoardsModule {}
+
