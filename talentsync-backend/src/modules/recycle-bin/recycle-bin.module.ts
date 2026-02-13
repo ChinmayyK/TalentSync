@@ -10,3 +10,4 @@ import { AppCommonModule } from '../../common/app-common.module';
   exports: [RecycleBinService],
 })
 export class RecycleBinModule {}
+
