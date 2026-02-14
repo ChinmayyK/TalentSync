@@ -587,4 +587,3 @@ export const tenantApi = {
     }
   },
 };
-
