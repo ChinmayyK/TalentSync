@@ -22,3 +22,4 @@ export class AvailabilityUtil {
     return new Date(iso);
   }
 }
+
