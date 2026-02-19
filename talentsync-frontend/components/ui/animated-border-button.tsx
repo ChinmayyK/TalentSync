@@ -27,3 +27,4 @@ export const AnimatedBorderButton: React.FC<AnimatedBorderButtonProps> = ({
         </button>
     );
 };
+
