@@ -53,3 +53,4 @@ export interface ScheduleInterviewPayload {
   };
   notes?: string;
 }
+
