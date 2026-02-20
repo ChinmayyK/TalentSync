@@ -217,3 +217,4 @@ export class QueryJobsDto {
   @Type(() => Number)
   limit?: number;
 }
+
