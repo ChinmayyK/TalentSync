@@ -196,4 +196,3 @@ export function TenantUsageTable({ data, isLoading }: TenantUsageTableProps) {
         </Card>
     );
 }
-
