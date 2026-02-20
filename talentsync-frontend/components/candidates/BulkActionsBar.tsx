@@ -66,3 +66,4 @@ export function BulkActionsBar({ selectedCount, onAction, onClearSelection }: Bu
     </div>
   );
 }
+
