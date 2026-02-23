@@ -10,3 +10,4 @@ export class WebhookRouter {
         await this.queue.getQueue().add('webhook', { provider, tenantId, action: 'webhook', payload });
     }
 }
+
