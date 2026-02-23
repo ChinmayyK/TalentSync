@@ -47,3 +47,4 @@ export interface CandidateListFilters {
 }
 
 export type CandidateBulkAction = 'change-stage' | 'send-email' | 'add-tag' | 'assign-recruiter' | 'delete' | 'email' | 'schedule' | 'sms';
+
