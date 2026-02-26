@@ -58,3 +58,4 @@ describe('ReportsService', () => {
     expect(CacheUtil.setCached).toHaveBeenCalled();
   });
 });
+
