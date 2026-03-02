@@ -4,3 +4,4 @@ export class VerifyDomainDto {
   @IsString()
   token: string;
 }
+
