@@ -590,4 +590,3 @@ export class ResumeParserService {
     return Buffer.concat(chunks);
   }
 }
-
