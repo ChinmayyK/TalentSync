@@ -79,3 +79,4 @@ export class CreateIdentityProviderDto {
   @IsBoolean()
   enabled?: boolean;
 }
+
