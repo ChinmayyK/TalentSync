@@ -203,4 +203,3 @@ export function FeedbackCard({ feedback, isLoading, error }: FeedbackCardProps) 
     </div>
   );
 }
-
