@@ -66,3 +66,4 @@ export default function OthersDummyPage({ title }: { title: string }) {
         </div>
     );
 }
+
