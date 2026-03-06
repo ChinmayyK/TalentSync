@@ -7,3 +7,4 @@ export class ZohoFieldMapDto {
   @IsObject()
   mapping: Record<string, string>;
 }
+
