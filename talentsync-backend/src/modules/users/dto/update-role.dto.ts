@@ -4,3 +4,4 @@ export class UpdateRoleDto {
     @IsString()
     role: string;
 }
+
