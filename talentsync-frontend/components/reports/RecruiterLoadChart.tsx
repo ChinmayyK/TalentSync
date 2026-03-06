@@ -91,3 +91,4 @@ export function RecruiterLoadChart({ data, isLoading }: RecruiterLoadChartProps)
     </div>
   );
 }
+
