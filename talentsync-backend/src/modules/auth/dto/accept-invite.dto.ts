@@ -18,3 +18,4 @@ export class AcceptInviteDto {
   @IsOptional()
   name?: string;
 }
+
