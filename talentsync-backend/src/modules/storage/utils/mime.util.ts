@@ -50,3 +50,4 @@ export function validateFileSize(
   const maxBytes = maxSizeMB * 1024 * 1024;
   return size <= maxBytes;
 }
+
