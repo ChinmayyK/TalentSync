@@ -23,3 +23,4 @@ export function clearAuthToken(): void {
 export function isAuthenticated(): boolean {
     return !!getAuthToken();
 }
+
