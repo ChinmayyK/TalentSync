@@ -89,3 +89,4 @@ export class TextExtractProcessor extends WorkerHost {
     }
   }
 }
+
