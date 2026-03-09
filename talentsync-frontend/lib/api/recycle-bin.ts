@@ -146,4 +146,3 @@ export async function purgeRecycleBinItem(id: string, token: string) {
 
     return response.json();
 }
-
