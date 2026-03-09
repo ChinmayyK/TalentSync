@@ -108,3 +108,4 @@ export function validateMapping(mappingConfig: MappingConfig): boolean {
 
   return true;
 }
+
