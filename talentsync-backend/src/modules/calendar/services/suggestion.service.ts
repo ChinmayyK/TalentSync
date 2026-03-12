@@ -517,3 +517,4 @@ export class SuggestionService {
     return map;
   }
 }
+
