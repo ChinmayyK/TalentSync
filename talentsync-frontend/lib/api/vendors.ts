@@ -75,3 +75,4 @@ export async function assignJobToVendor(id: string, dto: AssignJobDto): Promise<
 export async function removeJobFromVendor(id: string, jobId: string): Promise<void> {
     return client.delete(`/vendors/${id}/jobs/${jobId}`);
 }
+
