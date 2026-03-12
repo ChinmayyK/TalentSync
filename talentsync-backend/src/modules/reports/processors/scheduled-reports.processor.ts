@@ -122,3 +122,4 @@ export class ScheduledReportsProcessor extends WorkerHost {
     return next;
   }
 }
+
