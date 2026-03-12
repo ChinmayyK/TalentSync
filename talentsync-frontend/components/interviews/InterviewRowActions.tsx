@@ -59,3 +59,4 @@ export function InterviewRowActions({ event, onAction, disabled }: InterviewRowA
         </DropdownMenu>
     );
 }
+
