@@ -71,4 +71,3 @@ export class OverrideComponentStatusDto {
   @IsEnum(ComponentStatus)
   status?: ComponentStatus | null;
 }
-
