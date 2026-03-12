@@ -14,3 +14,4 @@ export class CreatePlatformUserDto {
   @IsString()
   password?: string; // if omitted, generate random and email temp password
 }
+
