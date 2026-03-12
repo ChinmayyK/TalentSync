@@ -198,4 +198,3 @@ export interface TimelineEvent {
 export async function getCandidateTimeline(candidateId: string, _token?: string): Promise<TimelineEvent[]> {
     return client.get(`/candidates/${candidateId}/timeline`);
 }
-
