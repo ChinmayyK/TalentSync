@@ -18,3 +18,4 @@ export function TalentSyncLogo({ className = "", size = "default" }: { className
         </Link>
     );
 }
+
