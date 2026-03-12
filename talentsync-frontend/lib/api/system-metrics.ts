@@ -43,3 +43,4 @@ export async function getSchedulingMetrics(): Promise<SchedulingMetrics> {
 export async function getTenantUsageMetrics(): Promise<TenantUsageMetrics[]> {
     return client.get<TenantUsageMetrics[]>(`${BASE_PATH}/tenant-usage`);
 }
+
