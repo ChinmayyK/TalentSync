@@ -145,3 +145,4 @@ export function CandidateBoard({ candidates, onStageChange, onCandidateClick }: 
         </DndContext>
     );
 }
+
