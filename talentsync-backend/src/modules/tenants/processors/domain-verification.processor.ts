@@ -93,3 +93,4 @@ export class DomainVerificationProcessor extends WorkerHost {
     this.logger.log(`Domain verified for tenant ${tenantId}`);
   }
 }
+
