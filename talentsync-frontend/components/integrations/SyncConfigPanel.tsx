@@ -410,3 +410,4 @@ export function SyncConfigPanel({ integration, onSave }: SyncConfigPanelProps) {
     </div>
   );
 }
+
