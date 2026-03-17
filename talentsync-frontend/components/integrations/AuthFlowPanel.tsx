@@ -390,3 +390,4 @@ export function AuthFlowPanel({ integration, onAuthComplete, onCancel }: AuthFlo
     </div>
   );
 }
+
