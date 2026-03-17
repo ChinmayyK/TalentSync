@@ -403,3 +403,4 @@ export class TwoFactorService {
     return crypto.scryptSync(key, salt, 32);
   }
 }
+
