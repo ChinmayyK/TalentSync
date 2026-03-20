@@ -155,4 +155,3 @@ export class GoogleProvider {
 
 // Export as MockGoogleProvider for backward compatibility
 export const MockGoogleProvider = GoogleProvider;
-
