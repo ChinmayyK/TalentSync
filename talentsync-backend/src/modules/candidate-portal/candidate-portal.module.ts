@@ -16,3 +16,4 @@ import { S3Service } from '../../common/s3.service';
   exports: [CandidatePortalService],
 })
 export class CandidatePortalModule {}
+
