@@ -7,3 +7,4 @@ export class MetricsService {
         console.log(`metric: integration.${provider}.${event} tenant=${tenantId}`);
     }
 }
+
