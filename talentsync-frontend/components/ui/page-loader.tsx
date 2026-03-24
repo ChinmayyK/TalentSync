@@ -152,3 +152,4 @@ export function TableLoader({ rows = 5, columns = 6 }: { rows?: number; columns?
         </div>
     );
 }
+
