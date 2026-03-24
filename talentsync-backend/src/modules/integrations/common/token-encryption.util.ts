@@ -39,3 +39,4 @@ export function decryptToken(payload: string) {
     const decrypted = Buffer.concat([decipher.update(data), decipher.final()]);
     return decrypted.toString('utf8');
 }
+
