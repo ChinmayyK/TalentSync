@@ -75,4 +75,3 @@ export function StageDurationChart({ data, isLoading }: StageDurationChartProps)
     </div>
   );
 }
-
