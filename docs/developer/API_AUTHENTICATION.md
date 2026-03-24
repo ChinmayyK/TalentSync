@@ -447,3 +447,4 @@ curl -X GET "https://api.talentsync.com/api/v1/candidates" \
 ---
 
 *API Authentication Guide maintained by TalentSync Engineering Team*
+
