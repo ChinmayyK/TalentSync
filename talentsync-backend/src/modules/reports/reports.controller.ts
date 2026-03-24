@@ -253,3 +253,4 @@ export class ReportsController {
     return this.svc.toggleScheduledReport(req.user.tenantId, req.user.sub, id);
   }
 }
+
