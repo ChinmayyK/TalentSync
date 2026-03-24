@@ -16,4 +16,3 @@ export async function verifyApiKey(
 ): Promise<boolean> {
   return bcrypt.compare(plain, hash);
 }
-
