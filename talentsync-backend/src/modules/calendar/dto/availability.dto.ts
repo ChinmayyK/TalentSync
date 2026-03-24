@@ -28,3 +28,4 @@ export class AvailabilityQueryDto {
   @IsTimezone()
   timezone?: string;
 }
+
