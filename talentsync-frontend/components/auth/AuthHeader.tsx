@@ -33,3 +33,4 @@ export function AuthHeader({ title, subtitle }: AuthHeaderProps) {
         </motion.div>
     );
 }
+
