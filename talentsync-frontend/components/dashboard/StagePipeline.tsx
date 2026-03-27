@@ -310,3 +310,4 @@ export function StagePipeline({ stages, activeStage, isLoading, onStageClick }: 
     </section>
   );
 }
+
