@@ -34,4 +34,3 @@ export async function invalidateCache(pattern: string): Promise<void> {
     }
   });
 }
-
