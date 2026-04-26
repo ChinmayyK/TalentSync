@@ -1,0 +1,461 @@
+================================================================================
+              TALENTSYNC - CLIENT DISCOVERY QUESTIONNAIRE
+              Questions to Ask During Implementation Meeting
+================================================================================
+
+Use this guide during client meetings to understand their needs and customize
+TalentSync accordingly.
+
+================================================================================
+SECTION 1: COMPANY & TEAM OVERVIEW
+================================================================================
+
+1.1 Basic Information
+---------------------
+[ ] Company name: ________________________________
+[ ] Industry: ___________________________________
+[ ] Company size (employees): ___________________
+[ ] Headquarters location: ______________________
+[ ] Other office locations: _____________________
+
+1.2 Hiring Team Structure
+-------------------------
+[ ] How many recruiters will use TalentSync?
+    Answer: _____
+
+[ ] How many hiring managers need access?
+    Answer: _____
+
+[ ] Do you have a dedicated recruiting operations team?
+    [ ] Yes  [ ] No
+
+[ ] Who will be the primary admin for TalentSync?
+    Name: _______________________
+    Email: ______________________
+
+
+================================================================================
+SECTION 2: CURRENT TOOLS & WORKFLOW
+================================================================================
+
+2.1 Existing Systems
+--------------------
+[ ] What ATS (Applicant Tracking System) do you currently use?
+    [ ] Greenhouse
+    [ ] Lever
+    [ ] Workday
+    [ ] BambooHR
+    [ ] iCIMS
+    [ ] Taleo
+    [ ] Jobvite
+    [ ] Other: _______________
+    [ ] None
+
+[ ] What CRM do you use for candidate relationships?
+    [ ] HubSpot
+    [ ] Salesforce
+    [ ] Zoho CRM
+    [ ] Other: _______________
+    [ ] None / Use ATS for this
+
+[ ] What calendar system does your team use?
+    [ ] Google Calendar (Google Workspace)
+    [ ] Outlook/Microsoft 365
+    [ ] Both (different teams use different systems)
+
+[ ] What video conferencing tool for interviews?
+    [ ] Zoom
+    [ ] Microsoft Teams
+    [ ] Google Meet
+    [ ] Other: _______________
+
+2.2 Current Pain Points
+-----------------------
+[ ] What are your biggest challenges with interview scheduling today?
+    ________________________________________________________________
+    ________________________________________________________________
+    ________________________________________________________________
+
+[ ] How do you currently schedule interviews? (Email, spreadsheets, etc.)
+    ________________________________________________________________
+
+[ ] What's your average time-to-schedule an interview?
+    Answer: _____
+
+[ ] Do you experience frequent reschedules?
+    [ ] Rarely  [ ] Sometimes  [ ] Often  [ ] Very Often
+
+
+================================================================================
+SECTION 3: HIRING VOLUME & PROCESS
+================================================================================
+
+3.1 Volume Metrics
+------------------
+[ ] How many interviews do you schedule per month?
+    Answer: _____
+
+[ ] How many open positions at any given time?
+    Answer: _____
+
+[ ] How many candidates do you typically process per month?
+    Answer: _____
+
+[ ] Peak hiring seasons (if any)?
+    ________________________________________________________________
+
+3.2 Interview Process
+---------------------
+[ ] What types of interviews do you conduct? (Check all that apply)
+    [ ] Phone screens
+    [ ] Video interviews
+    [ ] On-site interviews
+    [ ] Panel interviews (multiple interviewers)
+    [ ] Technical assessments
+    [ ] Case studies
+    [ ] Executive/final round
+
+[ ] What is your typical interview process flow?
+    Stage 1: _________________________
+    Stage 2: _________________________
+    Stage 3: _________________________
+    Stage 4: _________________________
+    Stage 5: _________________________
+
+[ ] Average number of interview rounds per candidate?
+    Answer: _____
+
+[ ] Average interview duration?
+    [ ] 30 minutes
+    [ ] 45 minutes
+    [ ] 60 minutes
+    [ ] 90+ minutes
+
+[ ] Do you schedule interviews across multiple time zones?
+    [ ] No, single location
+    [ ] Yes, a few time zones
+    [ ] Yes, globally distributed
+
+
+================================================================================
+SECTION 4: COMMUNICATION PREFERENCES
+================================================================================
+
+4.1 Candidate Communication
+---------------------------
+[ ] How do you currently communicate with candidates?
+    [ ] Email only
+    [ ] Email + Phone calls
+    [ ] Email + SMS
+    [ ] WhatsApp
+    [ ] Candidate portal
+
+[ ] Do you need SMS notifications to candidates?
+    [ ] Yes, critical
+    [ ] Nice to have
+    [ ] No
+
+[ ] Do you need WhatsApp notifications?
+    [ ] Yes (specify regions): _______________
+    [ ] No
+
+[ ] Do you send interview reminders?
+    [ ] Yes, manual
+    [ ] Yes, automated
+    [ ] No
+
+4.2 Branding Requirements
+-------------------------
+[ ] Do you need custom email templates with your branding?
+    [ ] Yes  [ ] No
+
+[ ] Do you have brand guidelines we should follow?
+    [ ] Yes (request copy)
+    [ ] No
+
+[ ] Company logo URL or file to upload: _________________________
+
+[ ] Primary brand color (hex code): #_____________
+
+
+================================================================================
+SECTION 5: INTEGRATION REQUIREMENTS
+================================================================================
+
+5.1 ATS Integration Priority
+----------------------------
+[ ] How important is ATS integration to your workflow?
+    [ ] Critical - must have before launch
+    [ ] Important - needed within first month
+    [ ] Nice to have
+    [ ] Not needed
+
+[ ] What data do you need to sync from ATS?
+    [ ] Candidates
+    [ ] Job/Requisition details
+    [ ] Interview stages
+    [ ] All of the above
+
+[ ] Do you need data to sync BACK to your ATS?
+    [ ] Yes  [ ] No
+
+5.2 CRM Integration Priority
+----------------------------
+[ ] Is CRM integration required?
+    [ ] Yes  [ ] No
+
+[ ] What CRM data do you want to access?
+    [ ] Contacts/Candidates
+    [ ] Companies
+    [ ] Deal stages
+    [ ] Activity history
+
+5.3 Calendar Integration
+------------------------
+[ ] Is calendar integration critical for go-live?
+    [ ] Yes, absolutely required
+    [ ] Nice to have
+
+[ ] Should TalentSync create calendar events automatically?
+    [ ] Yes  [ ] Manual is fine
+
+
+================================================================================
+SECTION 6: SECURITY & COMPLIANCE
+================================================================================
+
+6.1 Authentication
+------------------
+[ ] Do you require Single Sign-On (SSO)?
+    [ ] Yes, SAML 2.0
+    [ ] Yes, OIDC
+    [ ] No, email/password is fine
+
+[ ] SSO Provider (if applicable):
+    [ ] Okta
+    [ ] Azure AD
+    [ ] Google Workspace
+    [ ] OneLogin
+    [ ] Other: _______________
+
+[ ] Do you require Multi-Factor Authentication (MFA)?
+    [ ] Yes, for all users
+    [ ] Yes, for admins only
+    [ ] Nice to have
+    [ ] No
+
+6.2 Data & Compliance
+---------------------
+[ ] Are you subject to any specific compliance requirements?
+    [ ] GDPR (EU data subjects)
+    [ ] CCPA (California residents)
+    [ ] SOC 2
+    [ ] HIPAA
+    [ ] Other: _______________
+
+[ ] Do you have data residency requirements?
+    [ ] No
+    [ ] Yes - US only
+    [ ] Yes - EU only
+    [ ] Yes - specific country: _______________
+
+[ ] Do you need a Data Processing Addendum (DPA)?
+    [ ] Yes  [ ] No  [ ] Not sure
+
+[ ] What is your data retention policy preference?
+    [ ] Keep indefinitely
+    [ ] Delete after X months: _____
+    [ ] Follow our company policy (attach)
+
+
+================================================================================
+SECTION 7: USERS & ROLES
+================================================================================
+
+7.1 User Types
+--------------
+[ ] What user roles do you need?
+
+    Role: Admin
+    Count: _____
+    Permissions needed: Full system access
+    
+    Role: Recruiter
+    Count: _____
+    Permissions needed: ________________________________
+
+    Role: Hiring Manager
+    Count: _____
+    Permissions needed: ________________________________
+
+    Role: Coordinator
+    Count: _____
+    Permissions needed: ________________________________
+
+    Role: Interviewer (view only)
+    Count: _____
+    Permissions needed: ________________________________
+
+7.2 Team Structure
+------------------
+[ ] Do you need to separate users by team/department?
+    [ ] Yes  [ ] No
+
+[ ] If yes, what teams/departments?
+    1. ___________________
+    2. ___________________
+    3. ___________________
+    4. ___________________
+
+
+================================================================================
+SECTION 8: REPORTING & ANALYTICS
+================================================================================
+
+[ ] What metrics are most important to you?
+    [ ] Time-to-schedule
+    [ ] Interviews per recruiter
+    [ ] Candidate drop-off rates
+    [ ] Reschedule frequency
+    [ ] Interview-to-offer ratio
+    [ ] Other: _______________
+
+[ ] Do you need to export data for external reporting?
+    [ ] Yes, regularly
+    [ ] Occasionally
+    [ ] No
+
+[ ] Who needs access to reports?
+    [ ] Recruiting team only
+    [ ] Recruiting + HR leadership
+    [ ] Executive team
+    [ ] Other: _______________
+
+
+================================================================================
+SECTION 9: TIMELINE & PRIORITIES
+================================================================================
+
+9.1 Implementation Timeline
+---------------------------
+[ ] When do you want to go live?
+    Target date: _______________
+
+[ ] Is there a specific event driving this timeline?
+    [ ] New hiring initiative
+    [ ] Replacing existing tool
+    [ ] New year planning
+    [ ] Other: _______________
+
+9.2 Prioritization
+------------------
+[ ] Rank these features by priority (1 = highest):
+    ___ Interview scheduling
+    ___ Candidate management
+    ___ Calendar integration
+    ___ ATS integration
+    ___ Email/SMS notifications
+    ___ Reporting
+    ___ SSO/Security
+
+9.3 Pilot vs Full Rollout
+-------------------------
+[ ] Do you want to start with a pilot group?
+    [ ] Yes, with ___ users
+    [ ] No, full rollout immediately
+
+
+================================================================================
+SECTION 10: TRAINING & SUPPORT
+================================================================================
+
+[ ] How would you prefer training?
+    [ ] Live virtual training sessions
+    [ ] Recorded video tutorials
+    [ ] Documentation only
+    [ ] On-site training (additional cost)
+
+[ ] Who will be trained first?
+    [ ] Admins only, they train others
+    [ ] All users at once
+    [ ] Phased by team
+
+[ ] What level of support do you expect?
+    [ ] Email support (24-48hr response)
+    [ ] Chat support (same business day)
+    [ ] Phone support (immediate)
+    [ ] Dedicated success manager
+
+
+================================================================================
+SECTION 11: BUDGET & DECISION PROCESS
+================================================================================
+
+[ ] Do you have a budget in mind?
+    [ ] Yes: $_____ /month or /year
+    [ ] Not yet determined
+    [ ] Need to discuss internally
+
+[ ] Who are the decision makers?
+    Name: _____________________ Role: _____________________
+    Name: _____________________ Role: _____________________
+    Name: _____________________ Role: _____________________
+
+[ ] What is your decision timeline?
+    Answer: _______________
+
+[ ] Are you evaluating other solutions?
+    [ ] Yes: _______________
+    [ ] No, TalentSync is the preferred choice
+
+
+================================================================================
+SECTION 12: ADDITIONAL NOTES
+================================================================================
+
+[ ] Any other requirements or concerns not covered above?
+    ________________________________________________________________
+    ________________________________________________________________
+    ________________________________________________________________
+    ________________________________________________________________
+
+[ ] Questions the client has for us:
+    1. ________________________________________________________________
+    2. ________________________________________________________________
+    3. ________________________________________________________________
+
+
+================================================================================
+POST-MEETING ACTION ITEMS
+================================================================================
+
+[ ] Send follow-up email summarizing requirements
+[ ] Prepare customized demo based on their workflow
+[ ] Draft proposal with recommended plan tier
+[ ] Schedule implementation kickoff if approved
+[ ] Collect: Logo, brand colors, SSO metadata (if applicable)
+[ ] Identify integration credentials they need to obtain
+
+
+================================================================================
+MEETING DETAILS
+================================================================================
+
+Date: _______________
+Attendees: 
+  - Client: _________________________________
+  - Client: _________________________________
+  - Our Team: _______________________________
+  - Our Team: _______________________________
+
+Meeting Notes:
+_____________________________________________________________________________
+_____________________________________________________________________________
+_____________________________________________________________________________
+_____________________________________________________________________________
+_____________________________________________________________________________
+
+
+================================================================================
+END OF QUESTIONNAIRE
+================================================================================

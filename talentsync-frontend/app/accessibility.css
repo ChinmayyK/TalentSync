@@ -1,0 +1,299 @@
+/**
+ * Global Accessibility CSS Styles - WCAG 2.1 Level AA Compliance
+ * 
+ * Include this after your main globals.css
+ */
+
+/* ============================================
+   FOCUS INDICATORS - WCAG 2.4.7 (Level AA)
+   ============================================ */
+
+/* Enhanced focus ring for all interactive elements */
+:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+}
+
+/* Remove default outline when using focus-visible */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* High visibility focus for buttons and links */
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(var(--ring-rgb), 0.2);
+}
+
+/* Focus indicator for form elements */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 0;
+    border-color: hsl(var(--ring));
+}
+
+/* ============================================
+   SCREEN READER ONLY - WCAG 1.3.1 (Level A)
+   ============================================ */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Make sr-only visible when focused (for skip links) */
+.sr-only-focusable:focus,
+.sr-only-focusable:focus-within {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* ============================================
+   REDUCED MOTION - WCAG 2.3.3 (Level AAA)
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE - WCAG 1.4.11 (Level AA)
+   ============================================ */
+
+@media (prefers-contrast: more) {
+    :root {
+        --border: 0 0% 0%;
+        --ring: 0 0% 0%;
+    }
+
+    * {
+        border-color: currentColor !important;
+    }
+
+    button,
+    a,
+    input,
+    select,
+    textarea {
+        border-width: 2px !important;
+    }
+}
+
+/* ============================================
+   TEXT SPACING - WCAG 1.4.12 (Level AA)
+   ============================================ */
+
+/* Support for user style sheets that increase text spacing */
+html.accessibility-text-spacing * {
+    line-height: 1.5 !important;
+    letter-spacing: 0.12em !important;
+    word-spacing: 0.16em !important;
+}
+
+html.accessibility-text-spacing p {
+    margin-bottom: 2em !important;
+}
+
+/* ============================================
+   LINK STYLING - WCAG 1.4.1 (Level A)
+   ============================================ */
+
+/* Underline links when accessibility setting is enabled */
+.accessibility-underline-links a:not([role="button"]) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.accessibility-underline-links a:hover {
+    text-decoration-thickness: 2px;
+}
+
+/* Distinguish visited links */
+.accessibility-underline-links a:visited {
+    color: hsl(var(--muted-foreground));
+}
+
+/* ============================================
+   TARGET SIZE - WCAG 2.5.5 (Level AAA)
+   ============================================ */
+
+/* Ensure touch targets are at least 44x44px */
+@media (pointer: coarse) {
+
+    button,
+    a,
+    input[type="checkbox"],
+    input[type="radio"],
+    [role="button"],
+    [role="link"],
+    [role="menuitem"],
+    [role="tab"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Checkbox and radio need different handling */
+    input[type="checkbox"],
+    input[type="radio"] {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* ============================================
+   COLOR CONTRAST HELPERS
+   WCAG 1.4.3 (Level AA) / 1.4.6 (Level AAA)
+   ============================================ */
+
+/* Error messages - ensure 4.5:1 contrast */
+.error-text {
+    color: var(--accessibility-error-color, hsl(0 84% 60%));
+}
+
+/* Success messages */
+.success-text {
+    color: hsl(142 76% 36%);
+    /* Green with good contrast */
+}
+
+/* Warning messages */
+.warning-text {
+    color: hsl(38 92% 40%);
+    /* Darker amber for better contrast */
+}
+
+/* ============================================
+   FORM ACCESSIBILITY - WCAG 3.3.2 (Level A)
+   ============================================ */
+
+/* Required field indicators */
+[data-mandatory-format="asterisk"] .required-label::after {
+    content: " *";
+    color: var(--accessibility-error-color, hsl(0 84% 60%));
+    font-weight: bold;
+}
+
+[data-mandatory-format="text"] .required-label::after {
+    content: " (Required)";
+    color: var(--accessibility-error-color, hsl(0 84% 60%));
+    font-size: 0.875em;
+    font-weight: normal;
+}
+
+/* Error icon support */
+[data-error-icon="true"] .form-error::before {
+    content: "⚠ ";
+}
+
+/* Invalid form field styling */
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown),
+select:invalid {
+    border-color: var(--accessibility-error-color, hsl(0 84% 60%));
+}
+
+/* ============================================
+   LANDMARK REGIONS - WCAG 1.3.1 (Level A)
+   ============================================ */
+
+/* Visual indicators for landmark regions in debug mode */
+.accessibility-debug main,
+.accessibility-debug nav,
+.accessibility-debug header,
+.accessibility-debug footer,
+.accessibility-debug aside,
+.accessibility-debug [role="main"],
+.accessibility-debug [role="navigation"],
+.accessibility-debug [role="banner"],
+.accessibility-debug [role="contentinfo"],
+.accessibility-debug [role="complementary"] {
+    outline: 2px dashed hsl(200 100% 50%);
+    outline-offset: 4px;
+}
+
+.accessibility-debug main::before,
+.accessibility-debug [role="main"]::before {
+    content: "main";
+    position: absolute;
+    top: -1.5em;
+    left: 0;
+    font-size: 0.75rem;
+    background: hsl(200 100% 50%);
+    color: white;
+    padding: 0 0.5em;
+    border-radius: 2px;
+}
+
+/* ============================================
+   DISABLED STATE - WCAG 1.4.3 (Level AA)
+   ============================================ */
+
+/* Ensure disabled elements have sufficient contrast */
+[disabled],
+.disabled,
+[aria-disabled="true"] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ============================================
+   LOADING STATES - WCAG 2.2.2 (Level A)
+   ============================================ */
+
+/* Ensure loading indicators are announced */
+[aria-busy="true"]::after {
+    content: " Loading...";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* ============================================
+   TABLES - WCAG 1.3.1 (Level A)
+   ============================================ */
+
+/* Ensure table headers are distinguishable */
+table th {
+    font-weight: 600;
+    background-color: hsl(var(--muted));
+}
+
+/* Striped rows for better readability */
+table tbody tr:nth-child(even) {
+    background-color: hsl(var(--muted) / 0.5);
+}
+
+/* Focus indication for sortable headers */
+table th[aria-sort]:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: -2px;
+}

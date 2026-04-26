@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: talentsync
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7
+        ports:
+          - 6379:6379
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Generate Prisma Client
+      run: npx prisma generate
+
+    # - name: Run Migrations (Optional for CI if testing against DB)
+    #   env:
+    #     DATABASE_URL: postgresql://user:password@localhost:5432/talentsync
+    #   run: npx prisma migrate deploy
+
+    - name: Lint
+      run: npm run lint
+
+    - name: Test
+      env:
+        DATABASE_URL: postgresql://user:password@localhost:5432/talentsync
+        REDIS_URL: redis://localhost:6379
+        JWT_SECRET: test-secret
+      run: npm run test
+
+    - name: Build
+      run: npm run build

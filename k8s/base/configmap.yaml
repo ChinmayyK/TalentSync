@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: talentsync-config
+  namespace: talentsync
+data:
+  NODE_ENV: "production"
+  PORT: "3001"
+  FRONTEND_URL: "https://talentsync.talentsync.com"
+  API_URL: "https://api.talentsync.talentsync.com"
+  
+  # Database (use secrets for sensitive values)
+  DATABASE_SSL: "true"
+  
+  # Redis
+  REDIS_PORT: "6379"
+  
+  # S3/Storage
+  S3_REGION: "ap-south-1"
+  S3_BUCKET: "talentsync-prod"
+  
+  # Email
+  SMTP_HOST: "smtp.gmail.com"
+  SMTP_PORT: "587"
+  SMTP_SECURE: "false"
+  
+  # Rate Limiting
+  RATE_LIMIT_DEFAULT_MAX: "100"
+  RATE_LIMIT_WINDOW_MS: "60000"

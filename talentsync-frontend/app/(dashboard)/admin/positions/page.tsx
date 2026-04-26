@@ -1,0 +1,5 @@
+import { redirect } from "next/navigation";
+
+export default function PositionsPage() {
+    redirect("/admin/positions/all");
+}

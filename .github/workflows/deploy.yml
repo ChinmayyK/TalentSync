@@ -1,0 +1,248 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - staging
+          - production
+      skip_tests:
+        description: 'Skip tests (use with caution)'
+        required: false
+        default: false
+        type: boolean
+
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
+      - '.gitignore'
+
+env:
+  NODE_VERSION: '20.x'
+  REGISTRY: ghcr.io
+  BACKEND_IMAGE: ${{ github.repository }}/talentsync-backend
+  FRONTEND_IMAGE: ${{ github.repository }}/talentsync-frontend
+
+jobs:
+  # ============================================
+  # BUILD & TEST (Pre-deployment validation)
+  # ============================================
+  validate:
+    name: Validate Build
+    runs-on: ubuntu-latest
+    if: ${{ !inputs.skip_tests }}
+    outputs:
+      backend_sha: ${{ steps.sha.outputs.backend }}
+      frontend_sha: ${{ steps.sha.outputs.frontend }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            talentsync-backend/package-lock.json
+            talentsync-frontend/package-lock.json
+
+      - name: Get SHA
+        id: sha
+        run: |
+          echo "backend=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          echo "frontend=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Build backend
+        working-directory: talentsync-backend
+        run: |
+          npm ci
+          npx prisma generate
+          npm run build
+
+      - name: Build frontend
+        working-directory: talentsync-frontend
+        run: |
+          npm ci
+          npm run build
+        env:
+          NEXT_PUBLIC_API_URL: ${{ secrets.API_URL || 'http://localhost:3001' }}
+
+  # ============================================
+  # BUILD DOCKER IMAGES
+  # ============================================
+  build-images:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+    needs: [validate]
+    if: always() && (needs.validate.result == 'success' || inputs.skip_tests)
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push backend
+        uses: docker/build-push-action@v5
+        with:
+          context: ./talentsync-backend
+          file: ./talentsync-backend/Dockerfile
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.BACKEND_IMAGE }}:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.BACKEND_IMAGE }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build and push frontend
+        uses: docker/build-push-action@v5
+        with:
+          context: ./talentsync-frontend
+          file: ./talentsync-frontend/Dockerfile
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.FRONTEND_IMAGE }}:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.FRONTEND_IMAGE }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          build-args: |
+            NEXT_PUBLIC_API_URL=${{ secrets.API_URL || 'http://localhost:3001' }}
+
+  # ============================================
+  # DEPLOY TO DEV
+  # ============================================
+  deploy-dev:
+    name: Deploy to Dev
+    runs-on: ubuntu-latest
+    needs: [build-images]
+    if: github.ref == 'refs/heads/main' || inputs.environment == 'dev'
+    environment:
+      name: dev
+      url: ${{ secrets.DEV_URL }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Dev
+        run: |
+          echo "Deploying to DEV environment..."
+          echo "Image: ${{ env.REGISTRY }}/${{ env.BACKEND_IMAGE }}:${{ github.sha }}"
+          # TODO: Add your deployment commands here. Options include:
+          #   - SSH to server: ssh deploy@server "docker compose pull && docker compose up -d"
+          #   - Kubernetes:    kubectl set image deployment/backend backend=$IMAGE_TAG
+          #   - Cloud webhook: curl -X POST "${{ secrets.DEV_WEBHOOK_URL }}" -d '{"tag": "${{ github.sha }}"}'
+
+      - name: Smoke test
+        run: |
+          echo "Running smoke tests..."
+          # TODO: Uncomment when DEV_URL is configured
+          # curl -f ${{ secrets.DEV_URL }}/health || exit 1
+
+  # ============================================
+  # DEPLOY TO STAGING
+  # ============================================
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: [deploy-dev]
+    if: inputs.environment == 'staging' || inputs.environment == 'production'
+    environment:
+      name: staging
+      url: ${{ secrets.STAGING_URL }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Staging
+        run: |
+          echo "Deploying to STAGING environment..."
+          echo "Image: ${{ env.REGISTRY }}/${{ env.BACKEND_IMAGE }}:${{ github.sha }}"
+          # TODO: Add staging deployment commands (same options as dev)
+
+      - name: Integration tests
+        run: |
+          echo "Running integration tests against staging..."
+          # TODO: Uncomment when test suite is ready
+          # npm run test:e2e -- --baseUrl=${{ secrets.STAGING_URL }}
+
+  # ============================================
+  # DEPLOY TO PRODUCTION (Manual Approval Required)
+  # ============================================
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: [deploy-staging]
+    if: inputs.environment == 'production'
+    environment:
+      name: production
+      url: ${{ secrets.PRODUCTION_URL }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Pre-deployment backup
+        run: |
+          echo "Creating pre-deployment database backup..."
+          # TODO: Trigger backup via webhook or script
+          # curl -X POST "${{ secrets.BACKUP_WEBHOOK_URL }}"
+
+      - name: Deploy to Production
+        run: |
+          echo "Deploying to PRODUCTION environment..."
+          echo "Image: ${{ env.REGISTRY }}/${{ env.BACKEND_IMAGE }}:${{ github.sha }}"
+          # TODO: Add production deployment commands
+
+      - name: Health check
+        run: |
+          echo "Verifying deployment health..."
+          # TODO: Uncomment when PRODUCTION_URL is configured
+          # curl -f ${{ secrets.PRODUCTION_URL }}/health/ready || exit 1
+
+  # ============================================
+  # ROLLBACK (Triggered on deployment failure)
+  # ============================================
+  rollback:
+    name: Rollback Deployment
+    runs-on: ubuntu-latest
+    needs: [deploy-dev, deploy-staging, deploy-production]
+    if: always() && (needs.deploy-dev.result == 'failure' || needs.deploy-staging.result == 'failure' || needs.deploy-production.result == 'failure')
+
+    steps:
+      - name: Rollback
+        run: |
+          echo "Deployment failed! Initiating rollback..."
+          # TODO: Add rollback commands:
+          #   - Revert to previous image tag
+          #   - Restore database if needed (from backup taken in deploy-production)
+          #   - docker tag previous-image:tag current-image:latest && docker compose up -d
+
+      - name: Notify team
+        run: |
+          echo "Rollback completed. Notify the team."
+          # TODO: Send notification to Slack/email
+          # curl -X POST "${{ secrets.SLACK_WEBHOOK }}" -d '{"text": "Deployment rolled back for ${{ github.sha }}"}'
